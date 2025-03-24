@@ -7,9 +7,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "task.h"
-#include "list.h"
-#include "cpu.h"
+#include "../include/task.h"
+#include "../include/list.h"
+#include "../include/cpu.h"
 
 // reference to the head of the list
 struct node *head = NULL;

@@ -11,27 +11,25 @@ clean:
 	rm -rf *.o
 	rm -rf sjf
 	rm -rf fcfs
-	
+
+sjf: src/driver.o src/list.o src/CPU.o src/schedule_sjf.o
+	$(CC) $(CFLAGS) -o sjf src/driver.o src/schedule_sjf.o src/list.o src/CPU.o
+
+fcfs: src/driver.o src/list.o src/CPU.o src/schedule_fcfs.o
+	$(CC) $(CFLAGS) -o fcfs src/driver.o src/schedule_fcfs.o src/list.o src/CPU.o
 
 
-sjf: driver.o list.o CPU.o schedule_sjf.o
-	$(CC) $(CFLAGS) -o sjf driver.o schedule_sjf.o list.o CPU.o
+schedule_sjf.o: src/schedule_sjf.c
+	$(CC) $(CFLAGS) -c src/schedule_sjf.c
 
-fcfs: driver.o list.o CPU.o schedule_fcfs.o
-	$(CC) $(CFLAGS) -o fcfs driver.o schedule_fcfs.o list.o CPU.o
+schedule_fcfs.o: src/schedule_fcfs.c
+	$(CC) $(CFLAGS) -c src/schedule_fcfs.c
 
+driver.o: src/driver.c
+	$(CC) $(CFLAGS) -c src/driver.c
 
-schedule_sjf.o: schedule_sjf.c
-	$(CC) $(CFLAGS) -c schedule_sjf.c
+list.o: src/list.c headers/list.h
+	$(CC) $(CFLAGS) -c src/list.c
 
-schedule_fcfs.o: schedule_fcfs.c
-	$(CC) $(CFLAGS) -c schedule_fcfs.c
-
-driver.o: driver.c
-	$(CC) $(CFLAGS) -c driver.c
-
-list.o: list.c list.h
-	$(CC) $(CFLAGS) -c list.c
-
-CPU.o: CPU.c cpu.h
-	$(CC) $(CFLAGS) -c CPU.c
+CPU.o: src/CPU.c headers/cpu.h
+	$(CC) $(CFLAGS) -c src/CPU.c

@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#include "task.h"
+#include "../include/task.h"
 
 // run this task for the specified time howLong
 void run(Task *task, int howLong) {

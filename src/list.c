@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "list.h"
-#include "task.h"
+#include "../include/list.h"
+#include "../include/task.h"
 
 
 // add a new task to the list of tasks
