@@ -53,37 +53,37 @@ T2,1,3
 T3,2,8
 ```
 Running FCFS:
-`./fcfs schedule_arrive_diff.txt`
+`./fcfs input/schedule_arrive_diff.txt`
 Output:
 ```
-[T2]     [3]     [25]    [7]
-[T7]     [100]   [30]    [6]
-[T6]     [12]    [10]    [5]
-[T8]     [200]   [25]    [4]
-[T5]     [5]     [20]    [3]
-[T4]     [5]     [15]    [2]
-[T3]     [3]     [25]    [1]
-[T1]     [2]     [20]    [0]
-Running task = [T6] [12] [10] for 10 units.
-Running task = [T4] [5] [15] for 15 units.
+[T8]	 [200]	 [25]	 [7]
+[T7]	 [100]	 [30]	 [6]
+[T6]	 [12]	 [10]	 [5]
+[T5]	 [5]	 [20]	 [4]
+[T4]	 [5]	 [15]	 [3]
+[T3]	 [3]	 [25]	 [2]
+[T2]	 [3]	 [25]	 [1]
+[T1]	 [2]	 [20]	 [0]
 Running task = [T1] [2] [20] for 20 units.
-Running task = [T5] [5] [20] for 20 units.
-Running task = [T3] [3] [25] for 25 units.
-Running task = [T8] [200] [25] for 25 units.
 Running task = [T2] [3] [25] for 25 units.
+Running task = [T3] [3] [25] for 25 units.
+Running task = [T4] [5] [15] for 15 units.
+Running task = [T5] [5] [20] for 20 units.
+Running task = [T6] [12] [10] for 10 units.
 Running task = [T7] [100] [30] for 30 units.
+Running task = [T8] [200] [25] for 25 units.
 Times:
 Process | Arrival Time | Burst Time | Turnaround Time | Waiting Time | Response Time | Response Ratio
-     T6 |           12 |         10 |              10 |            0 |             0 |           1.00
-     T4 |            5 |         15 |              32 |           17 |            17 |           2.13
-     T1 |            2 |         20 |              55 |           35 |            35 |           2.75
-     T5 |            5 |         20 |              72 |           52 |            52 |           3.60
-     T3 |            3 |         25 |              99 |           74 |            74 |           3.96
-     T8 |          200 |         25 |              25 |            0 |             0 |           1.00
-     T2 |            3 |         25 |             247 |          222 |           222 |           9.88
-     T7 |          100 |         30 |             180 |          150 |           150 |           6.00
+      T1|             2|          20|               20|             0|              0|           1.00
+      T2|             3|          25|               44|            19|             19|           1.76
+      T3|             3|          25|               69|            44|             44|           2.76
+      T4|             5|          15|               82|            67|             67|           5.47
+      T5|             5|          20|              102|            82|             82|           5.10
+      T6|            12|          10|              105|            95|             95|          10.50
+      T7|           100|          30|               47|            17|             17|           1.57
+      T8|           200|          25|               25|             0|              0|           1.00
 
 Averages:
 Turnaround Time | Waiting Time | Response Time | Response Ratio | Throughput
-           90.00|         68.75|          68.75|           3.79 |     21.25
+           61.75|         40.50|          40.50|           3.64 |     21.25
 ```
